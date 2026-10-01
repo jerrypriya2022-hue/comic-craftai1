@@ -1,0 +1,112 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+```
+<title>ComicCraft - AI Story & Image Creator</title>
+
+<link rel="stylesheet" href="/static/css/style.css">
+```
+
+</head>
+
+<body>
+
+<main class="container hero">
+
+```
+<section class="card">
+
+    <div class="badge">AI STORY & IMAGE CREATOR</div>
+
+    <h1>Bring your story to life.</h1>
+
+    <p class="subtitle">
+        Enter a simple idea and ComicCraft will create a
+        2-line story and an AI-generated image.
+    </p>
+
+    {% if error %}
+    <div class="error">
+        {{ error }}
+    </div>
+    {% endif %}
+
+    <form action="/generate" method="post" class="form-grid">
+
+        <label class="full">
+            Story Prompt
+
+            <textarea
+                name="story_prompt"
+                rows="5"
+                required
+                placeholder="Example: A boy helping a puppy in a beautiful village..."
+            ></textarea>
+        </label>
+
+        <label>
+            Main Character Name
+
+            <input
+                name="character_name"
+                required
+                placeholder="Example: Arun"
+            >
+        </label>
+
+        <label>
+            Setting
+
+            <select name="setting">
+                <option>Village</option>
+                <option>Forest</option>
+                <option>School</option>
+                <option>City</option>
+                <option>Space</option>
+                <option>Enchanted Kingdom</option>
+            </select>
+        </label>
+
+        <label>
+            Story Tone
+
+            <select name="tone">
+                <option>Light-hearted</option>
+                <option>Dramatic</option>
+                <option>Poetic</option>
+                <option>Funny</option>
+                <option>Adventure</option>
+            </select>
+        </label>
+
+        <label>
+            Image Style
+
+            <select name="art_style">
+                <option>Realistic</option>
+                <option>Comic book</option>
+                <option>Anime</option>
+                <option>Watercolor</option>
+                <option>Pixel art</option>
+            </select>
+        </label>
+
+        <button
+            class="primary full"
+            type="submit">
+            ✨ Generate Story & Image
+        </button>
+
+    </form>
+
+</section>
+```
+
+</main>
+
+</body>
+</html>
